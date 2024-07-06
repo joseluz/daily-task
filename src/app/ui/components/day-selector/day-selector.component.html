@@ -3,7 +3,10 @@
             class="bg-cyan-700 hover:bg-cyan-900 text-white px-5 py-2 rounded-lg">
             <
     </button>
-    <div>{{ currentDate | date : 'dd MMMM yyyy' }}</div>
+    <div class="flex flex-col items-center">
+      <span class="text-base">{{ currentDate | date : 'dd MMMM yyyy' }}</span>
+      <span class="text-sm">{{ currentDate | date : 'EEEE' }}</span>
+    </div>
     <button (click)="nextDay()"
             class="bg-cyan-700 hover:bg-cyan-900 text-white px-5 py-2 rounded-lg">
             >
