@@ -1,0 +1,11 @@
+<div class="flex gap-x-4 text-lg items-center">
+    <button (click)="previousDay()"
+            class="bg-cyan-700 hover:bg-cyan-900 text-white px-5 py-2 rounded-lg">
+            <
+    </button>
+    <div>{{ currentDate | date : 'dd MMMM yyyy' }}</div>
+    <button (click)="nextDay()"
+            class="bg-cyan-700 hover:bg-cyan-900 text-white px-5 py-2 rounded-lg">
+            >
+    </button>
+</div>

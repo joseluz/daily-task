@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { DairyActivityPage } from './ui/pages/dairy-activity.page/dairy-activity.page';
+import { DairyActivityPage } from './ui/pages/dairy-activity/dairy-activity.page';
 
 export interface AppRoute extends Route {
     path?: RoutePath;
