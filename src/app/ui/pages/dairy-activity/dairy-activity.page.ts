@@ -14,6 +14,12 @@ import {Task} from "../../../model/task";
 })
 export class DairyActivityPage {
   currentDate = new Date();
-  task = new Task({description: 'Peteca', isPlanned: true});
-  task2 = new Task({description: 'Peteca2', isPlanned: false});
+  tasks: Array<Task> = [
+    new Task({description: 'Peteca', isPlanned: true}),
+    new Task({description: 'Peteca2', isPlanned: false})
+  ]
+
+  addTask(): void {
+    this.tasks.push(new Task({}));
+  }
 }
