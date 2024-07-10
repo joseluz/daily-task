@@ -14,7 +14,7 @@ import {ButtonDifficultyLevelComponent} from "../button-difficulty-level/button-
 })
 export class TaskItemComponent implements OnInit {
   @Input() task: Task;
-  taskDifficulty: 1 | 2 | 3 | 4 | 5;
+  taskDifficulty: DifficultyLevel | null = 3;
   isLevelOne: boolean = false;
   isLevelTwo: boolean = false;
   isLevelThree: boolean = false;

@@ -1,51 +1,51 @@
 <!--TODO: Make it draggable-->
 <!--TODO: Show the difficulty number in the right side as a side panel.-->
-<div class="w-full py-4 px-4 gap-y-4 bg-white border rounded flex flex-col">
-  <div class="flex justify-between">
-    <div class="flex gap-x-2">
-      <input type="checkbox"/>
-      <input type="text"
-             class="focus:border-none outline-none"
-             [value]="task.description"/>
+<div class="w-full bg-white border rounded flex">
+  <div class="flex flex-col gap-y-4 flex-1 py-4 px-4">
+    <div class="flex justify-between">
+      <div class="flex gap-x-2">
+        <input type="checkbox"
+               (change)="task.isComplete = !task.isComplete"/>
+        <input type="text"
+               class="focus:border-none outline-none"
+               [value]="task.description"/>
+      </div>
+      <div>
+        <!-- TODO: Replace for an icon-->
+        <span class="text-xs text-green-700 font-bold">Planned</span>
+      </div>
     </div>
-    <div>
-      <!-- TODO: Replace for an icon-->
-      <span class="text-xs text-green-700 font-bold">Planned</span>
-    </div>
-  </div>
-  <div class="flex flex-col gap-y-2">
-    <span class="text-xs">Nivel de dificuldade</span>
-    <div class="flex justify-evenly">
-      <!--      <dt-button-difficulty-level [difficultyLevel]="1">-->
-      <!--      </dt-button-difficulty-level>-->
-      <!--      <dt-button-difficulty-level [difficultyLevel]="2">-->
-      <!--      </dt-button-difficulty-level>-->
-      <!--      <dt-button-difficulty-level [difficultyLevel]="3">-->
-      <!--      </dt-button-difficulty-level>-->
-      <!--      <dt-button-difficulty-level [difficultyLevel]="4">-->
-      <!--      </dt-button-difficulty-level>-->
-      <!--      <dt-button-difficulty-level [difficultyLevel]="5">-->
-      <!--      </dt-button-difficulty-level>-->
-      <dt-button-circle [label]="difficultyLevel.VeryLow"
-                        [cssBlock]="isLevelOne?'bg-gray-500':''"
-                        (action)="registerDifficultyLevel(difficultyLevel.VeryLow)">
-      </dt-button-circle>
-      <dt-button-circle [label]="difficultyLevel.Low"
-                        [cssBlock]="isLevelTwo?'bg-gray-500':''"
-                        (action)="registerDifficultyLevel(difficultyLevel.Low)">
-      </dt-button-circle>
-      <dt-button-circle [label]="difficultyLevel.Medium"
-                        [cssBlock]="isLevelThree?'bg-gray-500':''"
-                        (action)="registerDifficultyLevel(difficultyLevel.Medium)">
-      </dt-button-circle>
-      <dt-button-circle [label]="difficultyLevel.Hard"
-                        [cssBlock]="isLevelFour?'bg-gray-500':''"
-                        (action)="registerDifficultyLevel(difficultyLevel.Hard)">
-      </dt-button-circle>
-      <dt-button-circle [label]="difficultyLevel.VeryHard"
-                        [cssBlock]="isLevelFive?'bg-gray-500':''"
-                        (action)="registerDifficultyLevel(difficultyLevel.VeryHard)">
-      </dt-button-circle>
+    <div class="flex flex-col gap-y-2">
+      <span class="text-xs">Nivel de dificuldade</span>
+      <div class="flex justify-evenly">
+        <!--      <dt-button-difficulty-level [difficultyLevel]="5">-->
+        <!--      </dt-button-difficulty-level>-->
+        <dt-button-circle [label]="difficultyLevel.VeryLow"
+                          [cssBlock]="isLevelOne?'bg-gray-500':''"
+                          (action)="registerDifficultyLevel(difficultyLevel.VeryLow)">
+        </dt-button-circle>
+        <dt-button-circle [label]="difficultyLevel.Low"
+                          [cssBlock]="isLevelTwo?'bg-gray-500':''"
+                          (action)="registerDifficultyLevel(difficultyLevel.Low)">
+        </dt-button-circle>
+        <dt-button-circle [label]="difficultyLevel.Medium"
+                          [cssBlock]="isLevelThree?'bg-gray-500':''"
+                          (action)="registerDifficultyLevel(difficultyLevel.Medium)">
+        </dt-button-circle>
+        <dt-button-circle [label]="difficultyLevel.Hard"
+                          [cssBlock]="isLevelFour?'bg-gray-500':''"
+                          (action)="registerDifficultyLevel(difficultyLevel.Hard)">
+        </dt-button-circle>
+        <dt-button-circle [label]="difficultyLevel.VeryHard"
+                          [cssBlock]="isLevelFive?'bg-gray-500':''"
+                          (action)="registerDifficultyLevel(difficultyLevel.VeryHard)">
+        </dt-button-circle>
+      </div>
     </div>
   </div>
+  @if (taskDifficulty) {
+    <div class="flex min-h-full text-2xl items-center py-3 px-5 bg-yellow-200">
+      {{ taskDifficulty }}
+    </div>
+  }
 </div>
