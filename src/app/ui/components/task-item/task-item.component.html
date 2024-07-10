@@ -26,25 +26,25 @@
       <!--      </dt-button-difficulty-level>-->
       <!--      <dt-button-difficulty-level [difficultyLevel]="5">-->
       <!--      </dt-button-difficulty-level>-->
-      <dt-button-circle label="1"
+      <dt-button-circle [label]="difficultyLevel.VeryLow"
                         [cssBlock]="isLevelOne?'bg-gray-500':''"
-                        (action)="registerDifficultyLevel(1)">
+                        (action)="registerDifficultyLevel(difficultyLevel.VeryLow)">
       </dt-button-circle>
-      <dt-button-circle label="2"
+      <dt-button-circle [label]="difficultyLevel.Low"
                         [cssBlock]="isLevelTwo?'bg-gray-500':''"
-                        (action)="registerDifficultyLevel(2)">
+                        (action)="registerDifficultyLevel(difficultyLevel.Low)">
       </dt-button-circle>
-      <dt-button-circle label="3"
+      <dt-button-circle [label]="difficultyLevel.Medium"
                         [cssBlock]="isLevelThree?'bg-gray-500':''"
-                        (action)="registerDifficultyLevel(3)">
+                        (action)="registerDifficultyLevel(difficultyLevel.Medium)">
       </dt-button-circle>
-      <dt-button-circle label="4"
+      <dt-button-circle [label]="difficultyLevel.Hard"
                         [cssBlock]="isLevelFour?'bg-gray-500':''"
-                        (action)="registerDifficultyLevel(4)">
+                        (action)="registerDifficultyLevel(difficultyLevel.Hard)">
       </dt-button-circle>
-      <dt-button-circle label="5"
+      <dt-button-circle [label]="difficultyLevel.VeryHard"
                         [cssBlock]="isLevelFive?'bg-gray-500':''"
-                        (action)="registerDifficultyLevel(5)">
+                        (action)="registerDifficultyLevel(difficultyLevel.VeryHard)">
       </dt-button-circle>
     </div>
   </div>

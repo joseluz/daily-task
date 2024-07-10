@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {NgClass} from "@angular/common";
+import {DifficultyLevel} from "../../../model/task";
 
 @Component({
   selector: 'dt-button-circle',
@@ -10,7 +11,7 @@ import {NgClass} from "@angular/common";
   templateUrl: './button-circle.component.html'
 })
 export class ButtonCircleComponent {
-  @Input() label: string;
+  @Input() label: string | DifficultyLevel;
   @Output() action = new EventEmitter<void>();
   @Input() cssBlock: string = '';
 

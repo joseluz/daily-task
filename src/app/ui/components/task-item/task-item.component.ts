@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Task} from '../../../model/task';
+import {DifficultyLevel, Task} from '../../../model/task';
 import {ButtonCircleComponent} from "../button-circle/button-circle.component";
 import {ButtonDifficultyLevelComponent} from "../button-difficulty-level/button-difficulty-level.component";
 
@@ -20,6 +20,8 @@ export class TaskItemComponent implements OnInit {
   isLevelThree: boolean = false;
   isLevelFour: boolean = false;
   isLevelFive: boolean = false;
+
+  difficultyLevel = DifficultyLevel;
 
   ngOnInit(): void {
     if (!this.task) {
