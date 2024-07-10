@@ -15,4 +15,5 @@ import {Task} from "../../../model/task";
 export class DairyActivityPage {
   currentDate = new Date();
   task = new Task({description: 'Peteca', isPlanned: true});
+  task2 = new Task({description: 'Peteca2', isPlanned: false});
 }

@@ -43,9 +43,10 @@
       </div>
     </div>
   </div>
-  @if (taskDifficulty) {
+  @if (task.difficultyLevel) {
+    <!-- add animation to show it -->
     <div class="flex min-h-full text-2xl items-center py-3 px-5 bg-yellow-200">
-      {{ taskDifficulty }}
+      {{ task.difficultyLevel }}
     </div>
   }
 </div>

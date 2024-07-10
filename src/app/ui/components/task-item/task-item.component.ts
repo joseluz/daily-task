@@ -14,7 +14,6 @@ import {ButtonDifficultyLevelComponent} from "../button-difficulty-level/button-
 })
 export class TaskItemComponent implements OnInit {
   @Input() task: Task;
-  taskDifficulty: DifficultyLevel | null = 3;
   isLevelOne: boolean = false;
   isLevelTwo: boolean = false;
   isLevelThree: boolean = false;
@@ -30,11 +29,11 @@ export class TaskItemComponent implements OnInit {
   }
 
   registerDifficultyLevel(level: 1 | 2 | 3 | 4 | 5): void {
-    this.taskDifficulty = level;
-    this.isLevelOne = this.taskDifficulty == 1;
-    this.isLevelTwo = this.taskDifficulty == 2;
-    this.isLevelThree = this.taskDifficulty == 3;
-    this.isLevelFour = this.taskDifficulty == 4;
-    this.isLevelFive = this.taskDifficulty == 5;
+    this.task.difficultyLevel = level;
+    this.isLevelOne = this.task.difficultyLevel == 1;
+    this.isLevelTwo = this.task.difficultyLevel == 2;
+    this.isLevelThree = this.task.difficultyLevel == 3;
+    this.isLevelFour = this.task.difficultyLevel == 4;
+    this.isLevelFive = this.task.difficultyLevel == 5;
   }
 }
