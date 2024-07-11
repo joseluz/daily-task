@@ -50,4 +50,8 @@ export class DairyActivityPage {
   openTaskSelector(): void {
     this.showAllTasks = !this.showAllTasks;
   }
+
+  isTaskReadonly(task: Task): boolean {
+    return this.currentDaily?.tasks.some((e) => e.description == task.description) ?? false;
+  }
 }
