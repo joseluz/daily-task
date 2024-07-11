@@ -6,6 +6,7 @@ import {isSameDay} from "date-fns";
 import {DaySelectorComponent} from "../../components/day-selector/day-selector.component";
 import {CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray} from "@angular/cdk/drag-drop";
 import {TaskItemLightComponent} from "../../components/task-item-light/task-item-light.component";
+import {ButtonComponent} from "../../components/button/button.component";
 
 @Component({
   selector: 'dt-dairy-activity.page',
@@ -15,7 +16,8 @@ import {TaskItemLightComponent} from "../../components/task-item-light/task-item
     TaskItemComponent,
     CdkDropList,
     CdkDrag,
-    TaskItemLightComponent
+    TaskItemLightComponent,
+    ButtonComponent
   ],
   templateUrl: './dairy-activity.page.html'
 })

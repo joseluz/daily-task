@@ -16,9 +16,14 @@ export class TaskItemLightComponent {
   @Input() task: Task;
   @Input() isReadOnly = false;
   @Output() planTask = new EventEmitter<Task>();
+  @Output() removeTask = new EventEmitter<Task>();
 
   plan(): void {
     this.isReadOnly = true;
     this.planTask.emit(this.task);
+  }
+
+  remove(): void {
+    this.removeTask.emit(this.task);
   }
 }

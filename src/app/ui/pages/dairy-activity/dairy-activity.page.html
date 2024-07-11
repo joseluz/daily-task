@@ -10,14 +10,13 @@
     }
   </div>
   <div class="flex gap-x-2">
-    <button (click)="addTask()"
-            class="text-cyan-700 hover:text-cyan-900 hover:bg-gray-50 bg-white px-5 py-2 rounded-lg">
-      + Criar Tarefa
-    </button>
-    <button (click)="openTaskSelector()"
-            class="flex-1 bg-cyan-700 hover:bg-cyan-900 text-white px-5 py-2 rounded-lg">
-      Selecionar Tarefa
-    </button>
+    <dt-button type="secondary"
+               (clicked)="addTask()"
+               label="+ Criar Tarefa"></dt-button>
+    <dt-button type="primary"
+               class="flex-1"
+               (clicked)="openTaskSelector()"
+               label="Selecionar Tarefa"></dt-button>
   </div>
   @if (showAllTasks) {
     <div class="flex flex-col gap-y-2">
