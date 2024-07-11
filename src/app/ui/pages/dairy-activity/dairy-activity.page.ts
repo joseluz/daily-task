@@ -39,4 +39,8 @@ export class DairyActivityPage {
   reorder(event: CdkDragDrop<any, any>): void {
     moveItemInArray(this.currentDaily?.tasks || [], event.previousIndex, event.currentIndex);
   }
+
+  openTaskSelector(): void {
+
+  }
 }

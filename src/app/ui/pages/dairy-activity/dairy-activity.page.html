@@ -9,8 +9,15 @@
       <dt-task-item [task]="task" cdkDrag></dt-task-item>
     }
   </div>
-  <button (click)="addTask()"
-          class="bg-cyan-700 hover:bg-cyan-900 text-white px-5 py-2 rounded-lg">
-    Adicionar Tarefa
-  </button>
+  <div class="flex gap-x-2">
+
+    <button (click)="openTaskSelector()"
+            class="flex-1 bg-cyan-700 hover:bg-cyan-900 text-white px-5 py-2 rounded-lg">
+      Selecionar Tarefa
+    </button>
+    <button (click)="addTask()"
+            class="text-cyan-700 hover:text-cyan-900 hover:bg-gray-50 bg-white px-5 py-2 rounded-lg">
+      + Criar Tarefa
+    </button>
+  </div>
 </div>
