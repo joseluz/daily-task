@@ -18,3 +18,4 @@ export enum DifficultyLevel {
   Hard = 4,
   VeryHard = 5,
 }
+

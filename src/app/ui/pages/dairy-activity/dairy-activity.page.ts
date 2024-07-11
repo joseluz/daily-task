@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
-import {DaySelectorComponent} from './../../components/day-selector/day-selector.component';
 import {TaskItemComponent} from "../../components/task-item/task-item.component";
 import {Task} from "../../../model/task";
+import {Daily} from "../../../model/daily";
+import {isSameDay} from "date-fns";
+import {DaySelectorComponent} from "../../components/day-selector/day-selector.component";
 
 @Component({
   selector: 'dt-dairy-activity.page',
@@ -14,12 +16,20 @@ import {Task} from "../../../model/task";
 })
 export class DairyActivityPage {
   currentDate = new Date();
-  tasks: Array<Task> = [
-    new Task({description: 'Peteca', isPlanned: true}),
-    new Task({description: 'Peteca2', isPlanned: false})
-  ]
+  currentDaily: Daily | undefined;
+  calendar: Array<Daily> = [];
 
   addTask(): void {
-    this.tasks.push(new Task({}));
+    this.currentDaily = this.calendar.find(c => isSameDay(c.date, this.currentDate));
+    if (!this.currentDaily) {
+      this.currentDaily = new Daily({date: this.currentDate});
+      this.calendar.push(this.currentDaily);
+    }
+    this.currentDaily.tasks.push(new Task({}));
+  }
+
+  dateChanged(date: Date): void {
+    this.currentDate = date;
+    this.currentDaily = this.calendar.find(c => isSameDay(c.date, this.currentDate));
   }
 }
