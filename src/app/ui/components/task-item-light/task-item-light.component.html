@@ -1,0 +1,20 @@
+<div class="w-full bg-white border rounded flex">
+  <div class="flex flex-col gap-y-4 flex-1 py-4 px-4">
+    <div class="flex justify-between">
+      <div class="flex flex-col gap-x-2">
+        <input type="text"
+               placeholder="Nome da tarefa"
+               class="focus:border-none outline-none"
+               [(ngModel)]="task.description"/>
+        <span class="text-xs text-green-700 font-bold">Ultima vez 2 dias</span>
+      </div>
+      <div class="flex flex-col">
+        <button class="flex-1 bg-cyan-700 hover:bg-cyan-900 disabled:opacity-50 disabled:cursor-not-allowed text-white px-5 py-2 rounded-lg"
+                [disabled]="isReadOnly"
+                (click)="plan()">
+          +
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,4 +20,13 @@
       + Criar Tarefa
     </button>
   </div>
+  @if (showAllTasks) {
+    <div class="flex flex-col gap-y-2">
+      @for (task of allTasks; track task.id) {
+        <dt-task-item-light [task]="task"
+                            (planTask)="addTask($event)">
+        </dt-task-item-light>
+      }
+    </div>
+  }
 </div>
