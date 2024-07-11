@@ -5,6 +5,7 @@ export class Task {
   isComplete = false;
   scheduleFor: Date | undefined;
   difficultyLevel: DifficultyLevel | undefined;
+  comments: string | undefined;
 
   constructor(init?: Partial<Task>) {
     Object.assign(this, init);
