@@ -1,14 +1,14 @@
 <div class="flex gap-x-4 text-lg items-center">
-    <button (click)="previousDay()"
-            class="bg-cyan-700 hover:bg-cyan-900 text-white px-5 py-2 rounded-lg">
-            <
-    </button>
-    <div class="flex flex-col items-center">
-      <span class="text-base">{{ currentDate | date : 'dd MMMM yyyy' }}</span>
-      <span class="text-sm">{{ currentDate | date : 'EEEE' }}</span>
-    </div>
-    <button (click)="nextDay()"
-            class="bg-cyan-700 hover:bg-cyan-900 text-white px-5 py-2 rounded-lg">
-            >
-    </button>
+  <dt-button type="primary"
+             (clicked)="previousDay()"
+             label="<">
+  </dt-button>
+  <div class="flex flex-col items-center">
+    <span class="text-base">{{ currentDate | date : 'dd MMMM yyyy' }}</span>
+    <span class="text-sm">{{ currentDate | date : 'EEEE' }}</span>
+  </div>
+  <dt-button type="primary"
+             (clicked)="previousDay()"
+             label=">">
+  </dt-button>
 </div>
