@@ -2,9 +2,13 @@
   <dt-day-selector [currentDate]="currentDate"
                    (currentDateChange)="dateChanged($event)"></dt-day-selector>
   {{ currentDate }}
-  @for (task of currentDaily?.tasks; track task.id) {
-    <dt-task-item [task]="task"></dt-task-item>
-  }
+  <div class=" flex flex-col gap-y-5"
+       cdkDropList
+       (cdkDropListDropped)="reorder($event)">
+    @for (task of currentDaily?.tasks; track task.id) {
+      <dt-task-item [task]="task" cdkDrag></dt-task-item>
+    }
+  </div>
   <button (click)="addTask()"
           class="bg-cyan-700 hover:bg-cyan-900 text-white px-5 py-2 rounded-lg">
     Adicionar Tarefa

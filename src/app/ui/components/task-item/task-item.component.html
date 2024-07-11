@@ -10,7 +10,7 @@
                (change)="task.isComplete = !task.isComplete"/>
         <input type="text"
                class="focus:border-none outline-none"
-               [value]="task.description"/>
+               [(ngModel)]="task.description"/>
       </div>
       <div>
         <!-- TODO: Replace for an icon-->
