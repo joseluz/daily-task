@@ -1,13 +1,15 @@
 <div class="w-full bg-white border rounded flex">
-  <div class="flex min-h-full text-base items-center px-1 text-gray-400 cursor-move">
-    ||
+  <div class="flex min-h-full  items-center px-1 gap-x-2">
+    <span class="text-xl text-gray-400 cursor-move">||</span>
+    <input type="checkbox"
+           class="w-5 h-5"
+           (change)="task.isComplete = !task.isComplete"/>
   </div>
   <div class="flex flex-col gap-y-4 flex-1 py-4 px-4">
     <div class="flex justify-between">
       <div class="flex gap-x-2">
-        <input type="checkbox"
-               (change)="task.isComplete = !task.isComplete"/>
         <input type="text"
+               placeholder="Nome da tarefa"
                class="focus:border-none outline-none"
                [(ngModel)]="task.description"/>
       </div>
@@ -23,23 +25,24 @@
         <!--      <dt-button-difficulty-level [difficultyLevel]="5">-->
         <!--      </dt-button-difficulty-level>-->
         <dt-button-circle [label]="difficultyLevel.VeryLow"
-                          [cssBlock]="isLevelOne?'bg-gray-500':''"
+                          [cssBlock]="isLevelOne?'bg-amber-500':''"
                           (action)="registerDifficultyLevel(difficultyLevel.VeryLow)">
         </dt-button-circle>
         <dt-button-circle [label]="difficultyLevel.Low"
-                          [cssBlock]="isLevelTwo?'bg-gray-500':''"
+                          [cssBlock]="isLevelTwo?'bg-amber-500':''"
                           (action)="registerDifficultyLevel(difficultyLevel.Low)">
         </dt-button-circle>
         <dt-button-circle [label]="difficultyLevel.Medium"
-                          [cssBlock]="isLevelThree?'bg-gray-500':''"
+                          [cssBlock]="isLevelThree?'bg-amber-500':''"
                           (action)="registerDifficultyLevel(difficultyLevel.Medium)">
         </dt-button-circle>
         <dt-button-circle [label]="difficultyLevel.Hard"
-                          [cssBlock]="isLevelFour?'bg-gray-500':''"
+                          [cssBlock]="isLevelFour?'bg-amber-500':''"
                           (action)="registerDifficultyLevel(difficultyLevel.Hard)">
         </dt-button-circle>
         <dt-button-circle [label]="difficultyLevel.VeryHard"
-                          [cssBlock]="isLevelFive?'bg-gray-500':''"
+                          [cssBlock]="isLevelFive?'bg-amber-500':''"
+                          class=""
                           (action)="registerDifficultyLevel(difficultyLevel.VeryHard)">
         </dt-button-circle>
       </div>

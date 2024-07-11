@@ -13,7 +13,7 @@ import {DifficultyLevel} from "../../../model/task";
 export class ButtonCircleComponent {
   @Input() label: string | DifficultyLevel;
   @Output() action = new EventEmitter<void>();
-  @Input() cssBlock: string = '';
+  @Input() cssBlock: string | null = null;
 
   clicked(evt: Event): void {
     this.action.emit();
