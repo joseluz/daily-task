@@ -29,5 +29,12 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include": [
+    "src",
+    "./src/setup.jest.ts"
+  ],
+  "exclude": [
+    "**/*.cy.ts"
+  ]
 }
