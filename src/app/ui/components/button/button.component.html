@@ -1,5 +1,7 @@
 <button (click)="clicked.emit($event)"
+        data-testid="button-element"
         class="w-full px-5 py-2 rounded-lg"
+        [disabled]="isReadonly"
         [ngClass]="{'bg-cyan-700 hover:bg-cyan-900 text-white': isPrimary,
                     'bg-white border-gray-200 border hover:bg-gray-50 text-cyan-700': isSecondary,
                     'opacity-50': isReadonly}">

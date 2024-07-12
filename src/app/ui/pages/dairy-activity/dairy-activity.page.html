@@ -1,31 +1,37 @@
 <div class="w-full h-full flex flex-col gap-y-5 px-10 py-5 bg-gray-100">
   <dt-day-selector [currentDate]="currentDate"
                    (currentDateChange)="dateChanged($event)"></dt-day-selector>
-  {{ currentDate }}
   <div class=" flex flex-col gap-y-5"
        cdkDropList
        (cdkDropListDropped)="reorder($event)">
     @for (task of currentDaily?.tasks; track task.id) {
       <dt-task-item [task]="task" cdkDrag></dt-task-item>
+    } @empty {
+      <div data-testid="no-tasks-planned-placeholder">
+        No Data
+      </div>
     }
   </div>
   <div class="flex gap-x-2">
     <dt-button type="secondary"
+               data-testid="create-task-button"
                (clicked)="addTask()"
                label="+ Criar Tarefa"></dt-button>
     <dt-button type="primary"
                class="flex-1"
+               data-testid="select-task-button"
                (clicked)="openTaskSelector()"
                label="Selecionar Tarefa">
     </dt-button>
   </div>
   @if (showAllTasks) {
     <div class="flex flex-col gap-y-2">
-      @for (task of allTasks; track task.id) {
+      @for (task of allTasks; track task.id; let idx = $index) {
         <dt-task-item-light [task]="task"
                             [isReadOnly]="isTaskReadonly(task)"
                             (removeTask)="removeTask($event)"
-                            (planTask)="addTask($event)">
+                            (planTask)="addTask($event)"
+                            [attr.data-testid]="'light-task-item-' + idx">
         </dt-task-item-light>
       }
     </div>

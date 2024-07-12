@@ -1,6 +1,7 @@
 <div class="flex gap-x-4 text-lg items-center">
   <dt-button type="primary"
              (clicked)="previousDay()"
+             data-testid="previous-day-button"
              label="<">
   </dt-button>
   <div class="flex flex-col items-center">
@@ -9,6 +10,7 @@
   </div>
   <dt-button type="primary"
              (clicked)="nextDay()"
+             data-testid="next-day-button"
              label=">">
   </dt-button>
 </div>

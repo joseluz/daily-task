@@ -10,10 +10,12 @@
       </div>
       <div class="flex gap-x-2">
         <dt-button type="secondary"
+                   data-testid="remove-task-button"
                    (clicked)="removeTask.emit(task)"
                    label="D">
         </dt-button>
         <dt-button type="primary"
+                   data-testid="plan-task-button"
                    (clicked)="plan()"
                    [isReadonly]="isReadOnly"
                    label="+">
