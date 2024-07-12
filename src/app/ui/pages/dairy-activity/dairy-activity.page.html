@@ -24,6 +24,7 @@
       @for (task of allTasks; track task.id) {
         <dt-task-item-light [task]="task"
                             [isReadOnly]="isTaskReadonly(task)"
+                            (removeTask)="removeTask($event)"
                             (planTask)="addTask($event)">
         </dt-task-item-light>
       }

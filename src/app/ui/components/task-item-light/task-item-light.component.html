@@ -9,15 +9,15 @@
         <span class="text-xs text-green-700 font-bold">Ultima vez 2 dias</span>
       </div>
       <div class="flex gap-x-2">
-        <button class="flex-1 bg-white border border-gray-200 hover:bg-gray-50 text-cyan-700 px-5 py-2 rounded-lg"
-                (click)="plan()">
-          D
-        </button>
-        <button class="flex-1 bg-cyan-700 hover:bg-cyan-900 disabled:opacity-50 disabled:cursor-not-allowed text-white px-5 py-2 rounded-lg"
-                [disabled]="isReadOnly"
-                (click)="plan()">
-          +
-        </button>
+        <dt-button type="secondary"
+                   (clicked)="removeTask.emit(task)"
+                   label="D">
+        </dt-button>
+        <dt-button type="primary"
+                   (clicked)="plan()"
+                   [isReadonly]="isReadOnly"
+                   label="+">
+        </dt-button>
       </div>
     </div>
   </div>

@@ -27,8 +27,8 @@ export class DairyActivityPage {
   showAllTasks = false;
   calendar: Array<Daily> = [];
   allTasks: Array<Task> = [
-    new Task({description: 'Water the plants'}),
-    new Task({description: 'Feed the dog'}),
+    new Task({id: 1, description: 'Water the plants'}),
+    new Task({id: 2, description: 'Feed the dog'}),
   ];
 
   addTask(task?: Task): void {
@@ -37,7 +37,11 @@ export class DairyActivityPage {
       this.currentDaily = new Daily({date: this.currentDate});
       this.calendar.push(this.currentDaily);
     }
-    this.currentDaily.tasks.push(task ?? new Task({}));
+    const newTask = new Task({id: this.allTasks.length * -1})
+    if (!task) {
+      this.allTasks.push(newTask);
+    }
+    this.currentDaily.tasks.push(task ?? newTask);
   }
 
   dateChanged(date: Date): void {
@@ -54,6 +58,10 @@ export class DairyActivityPage {
   }
 
   isTaskReadonly(task: Task): boolean {
-    return this.currentDaily?.tasks.some((e) => e.description == task.description) ?? false;
+    return this.currentDaily?.tasks.some((e) => e.id == task.id) ?? false;
+  }
+
+  removeTask(task: Task): void {
+    this.allTasks = this.allTasks.filter(t => t.id !== task.id);
   }
 }
