@@ -4,8 +4,11 @@
   <div class=" flex flex-col gap-y-5"
        cdkDropList
        (cdkDropListDropped)="reorder($event)">
-    @for (task of currentDaily?.tasks; track task.id) {
-      <dt-task-item [task]="task" cdkDrag></dt-task-item>
+    @for (task of currentDaily?.tasks; track task.id; let idx = $index) {
+      <dt-task-item [task]="task"
+                    cdkDrag
+                    [attr.data-testid]="'task-item-' + idx">
+      </dt-task-item>
     } @empty {
       <div data-testid="no-tasks-planned-placeholder">
         No Data
@@ -25,7 +28,8 @@
     </dt-button>
   </div>
   @if (showAllTasks) {
-    <div class="flex flex-col gap-y-2">
+    <div class="flex flex-col gap-y-2"
+         data-testid="all-tasks-panel">
       @for (task of allTasks; track task.id; let idx = $index) {
         <dt-task-item-light [task]="task"
                             [isReadOnly]="isTaskReadonly(task)"
