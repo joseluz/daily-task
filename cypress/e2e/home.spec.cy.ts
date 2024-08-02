@@ -1,4 +1,4 @@
-import {HomePage} from "../page-objects/home.page";
+import { HomePage } from "../page-objects/home.page";
 
 describe('Home Test', () => {
   const homePage = new HomePage();
@@ -26,7 +26,7 @@ describe('Home Test', () => {
     homePage.existingTaskPanel.count(2);
     homePage.createTaskButton.click();
     const taskItem = homePage.taskList.get(0);
-    const text='Fill Water Bottles';
+    const text = 'Fill Water Bottles';
     taskItem.type(text);
     const simpleTaskItem = homePage.existingTaskPanel.getLast();
     simpleTaskItem.hasText(text);
