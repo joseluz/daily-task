@@ -3,6 +3,7 @@ import {DifficultyLevel, Task} from '../../../model/task';
 import {ButtonCircleComponent} from "../button-circle/button-circle.component";
 import {ButtonDifficultyLevelComponent} from "../button-difficulty-level/button-difficulty-level.component";
 import {FormsModule} from "@angular/forms";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'dt-task-item',
@@ -10,7 +11,8 @@ import {FormsModule} from "@angular/forms";
   imports: [
     ButtonCircleComponent,
     ButtonDifficultyLevelComponent,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ],
   templateUrl: './task-item.component.html'
 })

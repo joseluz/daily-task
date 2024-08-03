@@ -9,7 +9,7 @@
     <div class="flex justify-between">
       <div class="flex gap-x-2">
         <input type="text"
-               placeholder="Nome da tarefa"
+               placeholder="{{ 'TASK-NAME' | translate}}"
                class="focus:border-none outline-none"
                data-testid="task-item-description"
                [(ngModel)]="task.description"/>

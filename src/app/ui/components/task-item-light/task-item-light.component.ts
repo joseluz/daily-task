@@ -3,6 +3,7 @@ import {ButtonCircleComponent} from "../button-circle/button-circle.component";
 import {FormsModule} from "@angular/forms";
 import {Task} from "../../../model/task";
 import {ButtonComponent} from "../button/button.component";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'dt-task-item-light',
@@ -10,7 +11,8 @@ import {ButtonComponent} from "../button/button.component";
   imports: [
     ButtonCircleComponent,
     FormsModule,
-    ButtonComponent
+    ButtonComponent,
+    TranslateModule
   ],
   templateUrl: './task-item-light.component.html'
 })
