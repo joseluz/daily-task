@@ -1,5 +1,5 @@
 export class TaskDoc {
-  id: number;
+  id?: number;
   description: string | undefined;
   isPlanned = false;
   isComplete = false;

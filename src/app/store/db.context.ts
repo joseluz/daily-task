@@ -19,6 +19,5 @@ export class AppDB extends Dexie {
   }
 
   async initialSeed(): Promise<void> {
-
   }
 }

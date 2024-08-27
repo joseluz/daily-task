@@ -8,7 +8,7 @@ export class TaskStore {
   }
 
   storeSingle(task: TaskDoc): Promise<number> {
-    return this.db.tasks.add(task);
+    return this.db.tasks.put(task);
   }
 
   async all(): Promise<Array<TaskDoc>> {

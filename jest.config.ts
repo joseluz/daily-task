@@ -9,6 +9,7 @@ export default {
     '<rootDir>/dist/'
   ],
   preset: 'jest-preset-angular',
+  setupFiles: ["fake-indexeddb/auto"],
   setupFilesAfterEnv: ['<rootDir>/src/setup.jest.ts'],
   testEnvironment: 'jsdom',
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec).[tj]s?(x)'],
