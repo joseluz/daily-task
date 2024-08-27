@@ -13,7 +13,6 @@ export class ButtonComponent implements OnInit {
   @Input() label: string;
   @Input() type: 'primary' | 'secondary' = 'primary'
   @Input() isReadonly = false;
-  @Output() clicked = new EventEmitter<Event>();
   isPrimary = true;
   isSecondary = false;
 

@@ -1,6 +1,6 @@
 <div class="flex gap-x-4 text-lg items-center">
   <dt-button type="primary"
-             (clicked)="previousDay()"
+             (click)="previousDay()"
              data-testid="previous-day-button"
              label="<">
   </dt-button>
@@ -9,7 +9,7 @@
     <span class="text-sm">{{ currentDate | date : 'EEEE' }}</span>
   </div>
   <dt-button type="primary"
-             (clicked)="nextDay()"
+             (click)="nextDay()"
              data-testid="next-day-button"
              label=">">
   </dt-button>
